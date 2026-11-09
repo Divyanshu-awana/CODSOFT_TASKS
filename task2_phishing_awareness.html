@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Phishing Awareness Program</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--tx:#14213d;--mu:#5b6478;--ac:#0b4aad;--ok:#1a7f4b;--bad:#c0392b;--bd:#dde3ef;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10131a;--card:#1a1f2b;--tx:#e8ecf5;--mu:#9aa4b8;--ac:#6ea3ff;--ok:#4cc38a;--bad:#ff7a6b;--bd:#2c3446}}
+:root[data-theme="dark"]{--bg:#10131a;--card:#1a1f2b;--tx:#e8ecf5;--mu:#9aa4b8;--ac:#6ea3ff;--ok:#4cc38a;--bad:#ff7a6b;--bd:#2c3446}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{background:var(--ac);color:#fff;padding:22px 18px}header h1{margin:0;font-size:1.4rem}header p{margin:4px 0 0;opacity:.9}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--bd)}
+nav button{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:8px 12px;border-radius:20px;font:inherit;font-size:.9rem;cursor:pointer}
+nav button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+main{max-width:760px;margin:0 auto;padding:16px}section{display:none}section.on{display:block}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin:12px 0}
+h2{margin:6px 0 4px}h3{margin:0 0 6px}.mu{color:var(--mu)}ul{padding-left:20px;margin:6px 0}
+.mail{border:1px solid var(--bd);border-radius:8px;overflow:hidden;font-size:.92rem;margin:10px 0}
+.mail .h{background:var(--bg);padding:8px 12px;border-bottom:1px solid var(--bd)}.mail .b{padding:12px}
+.flag{background:#ffe9e6;color:#8a1c10;border-radius:4px;padding:0 4px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .flag{background:#4a1d19;color:#ffb3a8}}
+.url{font-family:ui-monospace,Menlo,monospace;word-break:break-all;background:var(--bg);padding:2px 6px;border-radius:4px}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:8px;font:inherit;cursor:pointer}
+.opt.ok{border-color:var(--ok);background:rgba(26,127,75,.15)}.opt.no{border-color:var(--bad);background:rgba(192,57,43,.15)}
+.fb{margin-top:8px;font-size:.92rem}.btn{background:var(--ac);color:#fff;border:0;border-radius:8px;padding:10px 16px;font:inherit;cursor:pointer}
+table{width:100%;border-collapse:collapse;font-size:.9rem}td,th{border-bottom:1px solid var(--bd);padding:6px;text-align:left;vertical-align:top}
+.bar{height:8px;background:var(--bd);border-radius:4px;margin:8px 0}.bar i{display:block;height:100%;background:var(--ac);border-radius:4px;width:0;transition:width .3s}
+</style></head><body>
+<header><h1>🎣 Phishing Awareness Program</h1><p>Spot it. Stop it. Report it. · CodSoft Cyber Security Internship, Task 2</p></header>
+<nav id="nav"></nav>
+<main>
+<section id="s0"><h2>1. What is phishing?</h2>
+<div class="card"><p>Phishing is a social-engineering attack where criminals impersonate a trusted party (bank, employer, courier, government) to trick you into giving up credentials, money or access, or into installing malware.</p>
+<ul><li><b>Email phishing</b>: mass, generic lures.</li><li><b>Spear phishing</b>: tailored to you, using your name, role or colleagues.</li><li><b>Whaling</b>: targets executives and finance staff.</li><li><b>Smishing / Vishing</b>: via SMS / phone calls.</li><li><b>Quishing</b>: malicious QR codes.</li><li><b>BEC</b> (business email compromise): fake invoices or "CEO" payment requests.</li></ul></div>
+<div class="card"><h3>Why it works</h3><p class="mu">Over 90% of breaches start with a human action. Attackers exploit emotion, not software bugs.</p></div></section>
+
+<section id="s1"><h2>2. Spot a suspicious email</h2>
+<p class="mu">Red flags are highlighted in the sample below.</p>
+<div class="mail"><div class="h"><b>From:</b> PayPaI Support &lt;<span class="flag">support@paypa1-secure.com</span>&gt;<br><b>Subject:</b> <span class="flag">URGENT: Account suspended in 24 hours</span></div>
+<div class="b">Dear <span class="flag">Customer</span>,<br>We detected <span class="flag">unusual activity</span>. <span class="flag">Verify now or your account will be closed.</span><br><br><span class="url">Hover: http://paypal.com.<span class="flag">verify-login.xyz</span>/auth</span><br><br>Open the <span class="flag">attached invoice.html</span> for details.</div></div>
+<div class="card"><h3>Checklist</h3><ul>
+<li><b>Sender:</b> look-alike domain (paypa1, rn vs m), mismatched reply-to.</li>
+<li><b>Urgency or threats:</b> "act now", "final notice".</li>
+<li><b>Generic greeting</b> and unexpected requests for passwords, OTPs, gift cards.</li>
+<li><b>Links:</b> hover (or long-press) before tapping; the real domain is the part just before the first single <code>/</code>.</li>
+<li><b>Attachments:</b> .html, .zip, .exe, macro-enabled Office files.</li>
+<li><b>Too good to be true:</b> prizes, refunds, job offers.</li></ul></div></section>
+
+<section id="s2"><h2>3. Fake logins &amp; fraudulent sites</h2>
+<div class="card"><table><tr><th>Check</th><th>Legit</th><th>Suspicious</th></tr>
+<tr><td>Domain</td><td><span class="url">accounts.google.com</span></td><td><span class="url">google.com.login-check.net</span><br><span class="url">gooogle-accounts.com</span></td></tr>
+<tr><td>HTTPS</td><td>Valid cert, but</td><td>A padlock does NOT prove trust; phishing sites use HTTPS too</td></tr>
+<tr><td>Behaviour</td><td>Password manager autofills</td><td>Autofill does not trigger on a fake domain</td></tr>
+<tr><td>Content</td><td>Consistent, polished</td><td>Typos, low-res logos, pop-ups asking for card + OTP</td></tr></table></div>
+<div class="card"><h3>Tips</h3><ul><li>Type the address yourself or use a bookmark.</li><li>Check the registered domain (the text before .com/.in).</li><li>Beware homograph tricks: <code>раypal.com</code> using Cyrillic "а".</li><li>Shopping sites: check seller reviews, domain age, and unusual payment methods.</li></ul></div></section>
+
+<section id="s3"><h2>4. Social-engineering techniques</h2>
+<div class="card"><table><tr><th>Technique</th><th>Example</th></tr>
+<tr><td>Authority</td><td>"This is the CEO, wire funds now."</td></tr>
+<tr><td>Urgency / fear</td><td>"Your account will be locked."</td></tr>
+<tr><td>Scarcity / greed</td><td>"Only 3 prizes left."</td></tr>
+<tr><td>Familiarity / trust</td><td>Message appears to come from a colleague or friend.</td></tr>
+<tr><td>Pretexting</td><td>Fake "IT helpdesk" call asking for your password.</td></tr>
+<tr><td>Baiting</td><td>USB drive labelled "Salaries 2026" left in a lobby.</td></tr>
+<tr><td>MFA fatigue</td><td>Flooding you with approval prompts until you tap "Yes".</td></tr></table></div>
+<div class="card"><p><b>Defence:</b> slow down, verify through a second channel (call the known number), and never share OTPs with anyone.</p></div></section>
+
+<section id="s4"><h2>5. Practical security tips</h2>
+<div class="card"><ul>
+<li>Enable <b>MFA</b>, preferably an authenticator app or passkeys/security keys over SMS.</li>
+<li>Use a <b>password manager</b> and unique passwords.</li>
+<li>Keep OS, browser and antivirus updated.</li>
+<li>Do not open unexpected attachments; preview in a sandbox if needed.</li>
+<li><b>Report</b> phishing to your IT/security team; in India use <b>cybercrime.gov.in</b> or call <b>1930</b> for financial fraud.</li>
+<li>If you clicked: disconnect, change passwords from a clean device, enable MFA, alert IT, monitor bank activity.</li></ul></div></section>
+
+<section id="s5"><h2>6. Case studies</h2>
+<div class="card"><h3>Google &amp; Facebook invoice scam (2013–2015)</h3><p>A Lithuanian fraudster sent fake invoices from a spoofed vendor and obtained over $100M. <b>Lesson:</b> verify payment-detail changes by phone; use dual approval for payments.</p></div>
+<div class="card"><h3>Twitter hack (2020)</h3><p>Attackers phoned employees pretending to be IT support (vishing), got access to internal tools and took over high-profile accounts. <b>Lesson:</b> staff training and phishing-resistant MFA.</p></div>
+<div class="card"><h3>RSA SecurID breach (2011)</h3><p>A spear-phishing email with an Excel attachment titled "2011 Recruitment plan" led to a major compromise. <b>Lesson:</b> targeted lures look routine; restrict attachments and patch.</p></div>
+<div class="card"><h3>Fake courier / KYC SMS (common in India)</h3><p>"Your bank KYC expires today, click link" leads to a clone banking page that steals the OTP. <b>Lesson:</b> banks never ask for OTP, PIN or CVV.</p></div></section>
+
+<section id="s6"><h2>7. Quiz</h2><div class="bar"><i id="pb"></i></div><div id="quiz"></div></section>
+</main>
+<script>
+const names=["Intro","Emails","Fake sites","Tactics","Tips","Cases","Quiz"];
+const nav=document.getElementById("nav");
+names.forEach((n,i)=>{const b=document.createElement("button");b.textContent=n;b.onclick=()=>show(i);nav.appendChild(b)});
+function show(i){document.querySelectorAll("section").forEach((s,j)=>s.classList.toggle("on",i===j));[...nav.children].forEach((b,j)=>b.classList.toggle("on",i===j));window.scrollTo(0,0);if(location.hash!=="#"+names[i].toLowerCase().replace(" ","-"))history.replaceState(null,"","#"+names[i].toLowerCase().replace(" ","-"))}
+const Q=[
+{q:"An email from 'it-support@c0mpany.com' says your password expires today and links to a login page. Best action?",o:["Click and log in quickly","Reply asking if it's real","Don't click; report it and check via the official portal or IT","Forward to colleagues as a warning"],a:2,e:"Look-alike domain (0 vs o) plus urgency. Verify through a known channel and report."},
+{q:"Which URL is most likely the genuine Microsoft login?",o:["microsoft.com.secure-login.net","login.microsoftonline.com","micros0ft-login.com","microsoft-support.xyz/login"],a:1,e:"Read the domain right before the first single slash: microsoftonline.com. Others hide a different registered domain."},
+{q:"A site has a padlock (HTTPS). Does that mean it's safe?",o:["Yes, always","No, phishing sites can have valid certificates too","Only if it's .com","Only on mobile"],a:1,e:"The padlock means the connection is encrypted, not that the site is trustworthy."},
+{q:"Your 'CEO' emails asking you to urgently buy gift cards and keep it secret. This is:",o:["Normal","Business email compromise (authority + urgency)","A tax notice","A software update"],a:1,e:"Authority, urgency and secrecy are classic BEC signals. Verify by phone."},
+{q:"A caller says they're from your bank and asks for the OTP to 'block a fraud'. You should:",o:["Share it, it's the bank","Hang up and call the number on your card","Share half the OTP","Ask them to email it"],a:1,e:"Banks never ask for OTPs. End the call and dial the official number yourself."},
+{q:"You clicked a phishing link and entered your password. First step?",o:["Ignore it","Change the password from a clean device, enable MFA, and tell IT","Delete the email only","Restart the PC"],a:1,e:"Act fast: reset credentials, enable MFA, report so others can be protected."}];
+let qi=0,sc=0;const box=document.getElementById("quiz");
+function render(){document.getElementById("pb").style.width=(qi/Q.length*100)+"%";
+if(qi>=Q.length){const m=sc>=5?"Excellent, you're a phishing-spotter!":sc>=3?"Good, review the tips again.":"Revisit the modules and retry.";box.innerHTML=`<div class="card"><h3>Score: ${sc} / ${Q.length}</h3><p>${m}</p><button class="btn" id="r">Retry</button></div>`;document.getElementById("r").onclick=()=>{qi=0;sc=0;render()};return}
+const q=Q[qi];box.innerHTML=`<div class="card"><p class="mu">Question ${qi+1} of ${Q.length}</p><h3>${q.q}</h3><div id="o"></div><div class="fb" id="fb"></div></div>`;
+q.o.forEach((t,i)=>{const b=document.createElement("button");b.className="opt";b.textContent=t;b.onclick=()=>pick(i,b);document.getElementById("o").appendChild(b)})}
+function pick(i,b){const q=Q[qi],bs=[...document.querySelectorAll(".opt")];bs.forEach(x=>x.disabled=true);bs[q.a].classList.add("ok");if(i===q.a)sc++;else b.classList.add("no");
+document.getElementById("fb").innerHTML=`<p>${i===q.a?"✅ Correct. ":"❌ Not quite. "}${q.e}</p><button class="btn" id="n">${qi===Q.length-1?"See score":"Next"}</button>`;document.getElementById("n").onclick=()=>{qi++;render()}}
+render();
+const start=Math.max(0,names.findIndex(n=>"#"+n.toLowerCase().replace(" ","-")===location.hash));show(start);
+</script></body></html>
